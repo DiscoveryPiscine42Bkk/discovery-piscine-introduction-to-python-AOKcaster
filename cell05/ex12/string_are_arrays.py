@@ -6,7 +6,6 @@ if (len(sys.argv)-1) == 1 :
     if not z:
         print("none")
     else :
-        for i in range(len(z)):
-            print("z", end='')
+        print('z'*len(z))
 else:
     print("none")
