@@ -22,7 +22,6 @@ def checkmate(board):
         return 0 <= r < size and 0 <= c < size
     
     #check pawn(P) move
-    print(king_pos)
     for dx, dy in [(1, -1), (1, 1)]:
         x, y = k_row + dx, k_col + dy
         if in_bounds(x, y) and board[x][y] == 'P':
