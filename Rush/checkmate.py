@@ -28,7 +28,7 @@ def checkmate(board):
             print("Success")
             return
 
-    # Check for Bishops (B) and Queens (Q) diagonally
+    # Check Bishops(B) move and Queens(Q) only x move
     for dx, dy in [(-1, -1), (-1, 1), (1, -1), (1, 1)]:
         x, y = k_row + dx, k_col + dy
         while in_bounds(x, y):
@@ -40,7 +40,7 @@ def checkmate(board):
             x += dx
             y += dy
 
-    # Check for Rooks (R) and Queens (Q) in straight lines
+    # Check Rooks(R) move and Queens(Q) only x move
     for dx, dy in [(-1, 0), (1, 0), (0, -1), (0, 1)]:
         x, y = k_row + dx, k_col + dy
         while in_bounds(x, y):
