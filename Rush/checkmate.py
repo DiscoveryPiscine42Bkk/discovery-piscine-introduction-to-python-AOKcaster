@@ -18,20 +18,20 @@ def checkmate(board):
     k_row, k_col = king_pos
     
     #check if that position inside board or not
-    def in_bounds(r, c):
+    def in_boards(r, c):
         return 0 <= r < size and 0 <= c < size
     
     #check pawn(P) move
     for dx, dy in [(1, -1), (1, 1)]:
         x, y = k_row + dx, k_col + dy
-        if in_bounds(x, y) and board[x][y] == 'P':
+        if in_boards(x, y) and board[x][y] == 'P':
             print("Success")
             return
 
     # Check Bishops(B) move and Queens(Q) only x move
     for dx, dy in [(-1, -1), (-1, 1), (1, -1), (1, 1)]:
         x, y = k_row + dx, k_col + dy
-        while in_bounds(x, y):
+        while in_boards(x, y):
             if board[x][y] != '.':
                 if board[x][y] in ['B', 'Q']:
                     print("Success")
@@ -40,10 +40,10 @@ def checkmate(board):
             x += dx
             y += dy
 
-    # Check Rooks(R) move and Queens(Q) only x move
+    # Check Rooks(R) move and Queens(Q) only + move
     for dx, dy in [(-1, 0), (1, 0), (0, -1), (0, 1)]:
         x, y = k_row + dx, k_col + dy
-        while in_bounds(x, y):
+        while in_boards(x, y):
             if board[x][y] != '.':
                 if board[x][y] in ['R', 'Q']:
                     print("Success")
